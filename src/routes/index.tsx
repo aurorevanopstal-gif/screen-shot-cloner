@@ -22,6 +22,12 @@ import eventOhain from "@/assets/tandem-event-ohain.jpg";
 import eventThuin from "@/assets/tandem-event-thuin.jpg";
 import duoPortrait from "@/assets/tandem-duo-portrait.jpg";
 import guitareImg from "@/assets/tandem-guitare.jpg";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  type CarouselApi,
+} from "@/components/ui/carousel";
 
 export const Route = createFileRoute("/")({
   head: () => ({
