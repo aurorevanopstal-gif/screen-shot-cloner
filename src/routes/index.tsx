@@ -32,13 +32,13 @@ import {
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Tandem — Duo voix et guitare" },
+      { title: "Tandem — Duo guitare et voix" },
       {
         name: "description",
         content:
           "Tandem, duo acoustique voix et guitare. Covers françaises, anglaises et italiennes, revisitées en version intimiste.",
       },
-      { property: "og:title", content: "Tandem — Duo voix et guitare" },
+      { property: "og:title", content: "Tandem — Duo guitare et voix" },
       {
         property: "og:description",
         content:
@@ -83,7 +83,7 @@ const repertoire = [
 
 const programmer = [
   { icon: Clock, label: "Durée", text: "Environ 1h30" },
-  { icon: Users, label: "Format", text: "Duo voix et guitare" },
+  { icon: Users, label: "Format", text: "Duo guitare et voix" },
   { icon: MapPin, label: "Lieux", text: "Petites et moyennes salles, cafés-concerts, clubs, centres culturels" },
   { icon: Wrench, label: "Autonomie technique", text: "Installation légère incluse" },
 ];
@@ -141,7 +141,7 @@ function Index() {
               TANDEM
             </h1>
             <p className="mt-4 text-xl font-medium text-copper md:text-2xl">
-              Duo voix et guitare
+              Duo guitare et voix
             </p>
             <p className="mt-6 max-w-md text-base leading-relaxed text-muted-foreground md:text-lg">
               Covers françaises, anglaises et italiennes, revisitées en version intimiste.
