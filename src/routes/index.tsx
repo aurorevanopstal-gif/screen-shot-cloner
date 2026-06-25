@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   Mic,
   Music,
@@ -22,6 +22,12 @@ import eventOhain from "@/assets/tandem-event-ohain.jpg";
 import eventThuin from "@/assets/tandem-event-thuin.jpg";
 import duoPortrait from "@/assets/tandem-duo-portrait.jpg";
 import guitareImg from "@/assets/tandem-guitare.jpg";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  type CarouselApi,
+} from "@/components/ui/carousel";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -83,7 +89,26 @@ const programmer = [
 ];
 
 function Index() {
-  const [slide, setSlide] = useState(0);
+  const [api, setApi] = useState<CarouselApi>();
+  const [current, setCurrent] = useState(0);
+  const [canScrollPrev, setCanScrollPrev] = useState(false);
+  const [canScrollNext, setCanScrollNext] = useState(false);
+
+  useEffect(() => {
+    if (!api) return;
+    setCanScrollPrev(api.canScrollPrev());
+    setCanScrollNext(api.canScrollNext());
+    setCurrent(api.selectedScrollSnap());
+    const onSelect = () => {
+      setCanScrollPrev(api.canScrollPrev());
+      setCanScrollNext(api.canScrollNext());
+      setCurrent(api.selectedScrollSnap());
+    };
+    api.on("select", onSelect);
+    return () => {
+      api.off("select", onSelect);
+    };
+  }, [api]);
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -153,67 +178,64 @@ function Index() {
           <h2 className="section-title">Prochainement</h2>
           <p className="mt-2 text-muted-foreground">Nos prochaines dates</p>
 
-          <div className="relative mt-10">
-            <div className="overflow-hidden">
-              <div
-                className="flex transition-transform duration-500 ease-out"
-                style={{ transform: `translateX(-${slide * 100}%)` }}
-              >
-                {events.map((e, i) => (
-                  <div key={i} className="w-full shrink-0 px-2 md:w-1/2">
-                    <article className="group overflow-hidden rounded-2xl border border-border bg-card transition-all hover:border-copper/60 hover:shadow-[0_10px_40px_-10px_var(--primary)]">
-                      <div className="aspect-[3/4] overflow-hidden bg-secondary">
-                        <img
-                          src={e.img}
-                          alt={e.place}
-                          className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-                        />
+          <Carousel setApi={setApi} opts={{ align: "start", loop: false }} className="mt-10">
+            <CarouselContent className="-ml-4">
+              {events.map((e, i) => (
+                <CarouselItem key={i} className="basis-full pl-4 md:basis-1/2">
+                  <article className="group overflow-hidden rounded-2xl border border-border bg-card transition-all hover:border-copper/60 hover:shadow-[0_10px_40px_-10px_var(--primary)]">
+                    <div className="aspect-[3/4] overflow-hidden bg-secondary">
+                      <img
+                        src={e.img}
+                        alt={e.place}
+                        className="h-full w-full object-contain"
+                      />
+                    </div>
+                    <div className="p-6">
+                      <div className="flex items-center gap-2 text-copper">
+                        <Calendar className="h-4 w-4" />
+                        <span className="text-sm font-medium">{e.date}</span>
                       </div>
-                      <div className="p-6">
-                        <div className="flex items-center gap-2 text-copper">
-                          <Calendar className="h-4 w-4" />
-                          <span className="text-sm font-medium">{e.date}</span>
-                        </div>
-                        <h3 className="mt-2 font-serif text-xl text-foreground">{e.place}</h3>
-                        <p className="mt-1 text-sm text-muted-foreground">{e.note}</p>
-                      </div>
-                    </article>
-                  </div>
-                ))}
-              </div>
-            </div>
+                      <h3 className="mt-2 font-serif text-xl text-foreground">{e.place}</h3>
+                      <p className="mt-1 text-sm text-muted-foreground">{e.note}</p>
+                    </div>
+                  </article>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
 
             <div className="mt-6 flex items-center justify-between">
               <div className="flex gap-2">
                 {events.map((_, i) => (
                   <button
                     key={i}
-                    onClick={() => setSlide(i)}
+                    onClick={() => api?.scrollTo(i)}
                     aria-label={`Aller à la diapositive ${i + 1}`}
                     className={`h-1.5 rounded-full transition-all ${
-                      slide === i ? "w-8 bg-copper" : "w-4 bg-border"
+                      current === i ? "w-8 bg-copper" : "w-4 bg-border"
                     }`}
                   />
                 ))}
               </div>
               <div className="flex gap-2">
                 <button
-                  onClick={() => setSlide((s) => Math.max(0, s - 1))}
+                  onClick={() => api?.scrollPrev()}
+                  disabled={!canScrollPrev}
                   aria-label="Précédent"
-                  className="rounded-full border border-border p-2 text-muted-foreground transition-colors hover:border-copper hover:text-copper"
+                  className="rounded-full border border-border p-2 text-muted-foreground transition-colors hover:border-copper hover:text-copper disabled:opacity-40"
                 >
                   <ChevronLeft className="h-5 w-5" />
                 </button>
                 <button
-                  onClick={() => setSlide((s) => Math.min(events.length - 1, s + 1))}
+                  onClick={() => api?.scrollNext()}
+                  disabled={!canScrollNext}
                   aria-label="Suivant"
-                  className="rounded-full border border-border p-2 text-muted-foreground transition-colors hover:border-copper hover:text-copper"
+                  className="rounded-full border border-border p-2 text-muted-foreground transition-colors hover:border-copper hover:text-copper disabled:opacity-40"
                 >
                   <ChevronRight className="h-5 w-5" />
                 </button>
               </div>
             </div>
-          </div>
+          </Carousel>
 
           <div className="mt-10 text-center">
             <a
@@ -234,7 +256,7 @@ function Index() {
           <img
             src={duoPortrait}
             alt="Portrait du duo Tandem"
-            className="aspect-[4/5] w-full rounded-2xl object-cover shadow-2xl"
+            className="aspect-[4/5] mx-auto w-full max-w-sm rounded-2xl object-cover shadow-2xl"
           />
           <div>
             <Mic className="h-10 w-10 text-copper" strokeWidth={1.5} />
