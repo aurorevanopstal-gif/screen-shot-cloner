@@ -256,7 +256,7 @@ function Index() {
           <img
             src={duoPortrait}
             alt="Portrait du duo Tandem"
-            className="aspect-[4/5] w-full rounded-2xl object-cover shadow-2xl"
+            className="aspect-[4/5] mx-auto w-full max-w-sm rounded-2xl object-cover shadow-2xl"
           />
           <div>
             <Mic className="h-10 w-10 text-copper" strokeWidth={1.5} />
