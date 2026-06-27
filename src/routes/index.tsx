@@ -183,13 +183,6 @@ function Index() {
               {events.map((e, i) => (
                 <CarouselItem key={i} className="basis-full pl-4 md:basis-1/2">
                   <article className="group overflow-hidden rounded-2xl border border-border bg-card transition-all hover:border-copper/60 hover:shadow-[0_10px_40px_-10px_var(--primary)]">
-                    <div className="aspect-[3/4] overflow-hidden bg-secondary">
-                      <img
-                        src={e.img}
-                        alt={e.place}
-                        className="h-full w-full object-contain"
-                      />
-                    </div>
                     <div className="p-6">
                       <div className="flex items-center gap-2 text-copper">
                         <Calendar className="h-4 w-4" />
