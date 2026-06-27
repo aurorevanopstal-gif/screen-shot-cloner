@@ -19,7 +19,6 @@ import {
 } from "lucide-react";
 import heroImg from "@/assets/tandem-concert-hero.jpg";
 import eventOhain from "@/assets/tandem-event-ohain.jpg";
-import eventThuin from "@/assets/tandem-event-thuin.jpg";
 import duoPortrait from "@/assets/tandem-duo-portrait.jpg";
 import guitareImg from "@/assets/tandem-guitare.jpg";
 import {
@@ -66,13 +65,6 @@ const events = [
     dateValue: new Date("2026-06-26T20:00:00"),
     place: "Les AfterWorks du Hututu, Ohain",
     note: "Marché nocturne, concert, bar, restauration",
-  },
-  {
-    img: eventThuin,
-    date: "Samedi 27 juin · 19h00",
-    dateValue: new Date("2026-06-27T19:00:00"),
-    place: "Vintage Market, MJ Thuin",
-    note: "Rue Alphonse Liégeois 4b — Concert à 19h",
   },
 ];
 
