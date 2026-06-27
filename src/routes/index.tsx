@@ -63,16 +63,20 @@ const events = [
   {
     img: eventOhain,
     date: "Vendredi 26 juin · 20h00",
+    dateValue: new Date("2026-06-26T20:00:00"),
     place: "Les AfterWorks du Hututu, Ohain",
     note: "Marché nocturne, concert, bar, restauration",
   },
   {
     img: eventThuin,
     date: "Samedi 27 juin · 19h00",
+    dateValue: new Date("2026-06-27T19:00:00"),
     place: "Vintage Market, MJ Thuin",
     note: "Rue Alphonse Liégeois 4b — Concert à 19h",
   },
 ];
+
+const upcomingEvents = events.filter((e) => e.dateValue.getTime() >= Date.now());
 
 const repertoire = [
   { icon: Music, title: "Variété française", text: "Les plus belles chansons françaises revisitées." },
@@ -180,7 +184,7 @@ function Index() {
 
           <Carousel setApi={setApi} opts={{ align: "start", loop: false }} className="mt-10">
             <CarouselContent className="-ml-4">
-              {events.map((e, i) => (
+              {upcomingEvents.map((e, i) => (
                 <CarouselItem key={i} className="basis-full pl-4 md:basis-1/2">
                   <article className="group overflow-hidden rounded-2xl border border-border bg-card transition-all hover:border-copper/60 hover:shadow-[0_10px_40px_-10px_var(--primary)]">
                     <div className="p-6">
@@ -198,7 +202,7 @@ function Index() {
 
             <div className="mt-6 flex items-center justify-between">
               <div className="flex gap-2">
-                {events.map((_, i) => (
+                {upcomingEvents.map((_, i) => (
                   <button
                     key={i}
                     onClick={() => api?.scrollTo(i)}
