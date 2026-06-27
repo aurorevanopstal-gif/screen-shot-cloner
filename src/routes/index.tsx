@@ -228,7 +228,7 @@ function Index() {
       <section className="border-t border-border/40 py-20">
         <div className="mx-auto grid max-w-7xl items-center gap-12 px-6 md:grid-cols-2">
           <img
-            src={duoPortrait}
+            src={duoPortrait.url}
             alt="Portrait du duo Tandem"
             className="aspect-[4/5] mx-auto w-full max-w-sm rounded-2xl object-cover shadow-2xl"
           />
