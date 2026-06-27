@@ -63,16 +63,20 @@ const events = [
   {
     img: eventOhain,
     date: "Vendredi 26 juin · 20h00",
+    dateValue: new Date("2026-06-26T20:00:00"),
     place: "Les AfterWorks du Hututu, Ohain",
     note: "Marché nocturne, concert, bar, restauration",
   },
   {
     img: eventThuin,
     date: "Samedi 27 juin · 19h00",
+    dateValue: new Date("2026-06-27T19:00:00"),
     place: "Vintage Market, MJ Thuin",
     note: "Rue Alphonse Liégeois 4b — Concert à 19h",
   },
 ];
+
+const upcomingEvents = events.filter((e) => e.dateValue.getTime() >= new Date().setMinutes(0, 0, 0, 0));
 
 const repertoire = [
   { icon: Music, title: "Variété française", text: "Les plus belles chansons françaises revisitées." },
