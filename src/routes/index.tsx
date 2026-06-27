@@ -19,7 +19,6 @@ import {
 } from "lucide-react";
 import heroImg from "@/assets/tandem-concert-hero.jpg";
 import eventOhain from "@/assets/tandem-event-ohain.jpg";
-import eventThuin from "@/assets/tandem-event-thuin.jpg";
 import duoPortrait from "@/assets/tandem-duo-portrait.jpg";
 import guitareImg from "@/assets/tandem-guitare.jpg";
 import {
