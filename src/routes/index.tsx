@@ -94,7 +94,6 @@ const programmer = [
 
 function Index() {
   const [api, setApi] = useState<CarouselApi>();
-  const [current, setCurrent] = useState(0);
   const [canScrollPrev, setCanScrollPrev] = useState(false);
   const [canScrollNext, setCanScrollNext] = useState(false);
 
@@ -102,11 +101,9 @@ function Index() {
     if (!api) return;
     setCanScrollPrev(api.canScrollPrev());
     setCanScrollNext(api.canScrollNext());
-    setCurrent(api.selectedScrollSnap());
     const onSelect = () => {
       setCanScrollPrev(api.canScrollPrev());
       setCanScrollNext(api.canScrollNext());
-      setCurrent(api.selectedScrollSnap());
     };
     api.on("select", onSelect);
     return () => {
@@ -200,19 +197,7 @@ function Index() {
               ))}
             </CarouselContent>
 
-            <div className="mt-6 flex items-center justify-between">
-              <div className="flex gap-2">
-                {upcomingEvents.map((_, i) => (
-                  <button
-                    key={i}
-                    onClick={() => api?.scrollTo(i)}
-                    aria-label={`Aller à la diapositive ${i + 1}`}
-                    className={`h-1.5 rounded-full transition-all ${
-                      current === i ? "w-8 bg-copper" : "w-4 bg-border"
-                    }`}
-                  />
-                ))}
-              </div>
+            <div className="mt-6 flex items-center justify-end">
               <div className="flex gap-2">
                 <button
                   onClick={() => api?.scrollPrev()}
