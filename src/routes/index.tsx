@@ -94,7 +94,6 @@ const programmer = [
 
 function Index() {
   const [api, setApi] = useState<CarouselApi>();
-  const [current, setCurrent] = useState(0);
   const [canScrollPrev, setCanScrollPrev] = useState(false);
   const [canScrollNext, setCanScrollNext] = useState(false);
 
@@ -102,11 +101,9 @@ function Index() {
     if (!api) return;
     setCanScrollPrev(api.canScrollPrev());
     setCanScrollNext(api.canScrollNext());
-    setCurrent(api.selectedScrollSnap());
     const onSelect = () => {
       setCanScrollPrev(api.canScrollPrev());
       setCanScrollNext(api.canScrollNext());
-      setCurrent(api.selectedScrollSnap());
     };
     api.on("select", onSelect);
     return () => {
