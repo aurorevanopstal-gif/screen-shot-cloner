@@ -67,13 +67,6 @@ const events = [
     place: "Les AfterWorks du Hututu, Ohain",
     note: "Marché nocturne, concert, bar, restauration",
   },
-  {
-    img: eventThuin,
-    date: "Samedi 27 juin · 19h00",
-    dateValue: new Date("2026-06-27T19:00:00"),
-    place: "Vintage Market, MJ Thuin",
-    note: "Rue Alphonse Liégeois 4b — Concert à 19h",
-  },
 ];
 
 const upcomingEvents = events.filter((e) => e.dateValue.getTime() >= Date.now());
