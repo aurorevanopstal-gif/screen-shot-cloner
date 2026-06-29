@@ -18,7 +18,7 @@ import {
   Calendar,
   Heart,
 } from "lucide-react";
-import heroImg from "@/assets/tandem-concert-hero.jpg";
+import heroImg from "@/assets/tandem-duo-live.png.asset.json";
 import eventOhain from "@/assets/tandem-event-ohain.jpg";
 import duoPortrait from "@/assets/tandem-duo-hd.jpg.asset.json";
 import guitareImg from "@/assets/tandem-guitare.jpg";
@@ -162,9 +162,9 @@ function Index() {
           <div className="relative">
             <div className="absolute -inset-4 rounded-2xl bg-gradient-to-br from-copper/20 to-transparent blur-2xl" />
             <img
-              src={heroImg}
+              src={heroImg.url}
               alt="Tandem en concert"
-              className="relative aspect-[4/5] w-full rounded-2xl object-cover shadow-2xl"
+              className="relative h-auto w-full rounded-2xl object-contain shadow-2xl"
             />
           </div>
         </div>
