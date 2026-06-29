@@ -20,7 +20,7 @@ import {
 } from "lucide-react";
 import heroImg from "@/assets/tandem-duo-live.png.asset.json";
 import eventOhain from "@/assets/tandem-event-ohain.jpg";
-import duoPortrait from "@/assets/tandem-duo-hd.jpg.asset.json";
+import duoPortrait from "@/assets/tandem-duo-concert.jpg.asset.json";
 import guitareImg from "@/assets/tandem-guitare.jpg";
 import {
   Carousel,
