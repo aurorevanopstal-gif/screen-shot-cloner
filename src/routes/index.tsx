@@ -20,7 +20,7 @@ import {
 } from "lucide-react";
 import heroImg from "@/assets/tandem-concert-hero.jpg";
 import eventOhain from "@/assets/tandem-event-ohain.jpg";
-import duoPortrait from "@/assets/tandem-duo-hd.jpg.asset.json";
+import duoPortrait from "@/assets/tandem-duo-live.png.asset.json";
 import guitareImg from "@/assets/tandem-guitare.jpg";
 import {
   Carousel,
@@ -235,7 +235,7 @@ function Index() {
           <img
             src={duoPortrait.url}
             alt="Portrait du duo Tandem"
-            className="aspect-[4/5] mx-auto w-full max-w-sm rounded-2xl object-cover shadow-2xl"
+            className="mx-auto w-full max-w-xl rounded-2xl object-contain shadow-2xl"
           />
           <div>
             <Mic className="h-10 w-10 text-copper" strokeWidth={1.5} />
