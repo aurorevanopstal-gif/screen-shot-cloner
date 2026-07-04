@@ -253,10 +253,11 @@ function Index() {
         <div className="mx-auto max-w-7xl px-6">
           <h2 className="section-title">Écouter</h2>
           <p className="mt-2 text-muted-foreground">Quelques extraits live</p>
-          <div className="mt-10 grid gap-8 md:grid-cols-2">
+          <div className="mt-10 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
             {[
               { id: "1xtE4LcOeDs", caption: "Live — Coup de cœur" },
               { id: "yzYwXExQZgs", caption: "Soirée live" },
+              { id: "hzBz-2f3EIE", caption: "Nouveau extrait" },
             ].map((v) => (
               <div key={v.id}>
                 <div className="aspect-video overflow-hidden rounded-xl border border-border bg-card shadow-xl">
