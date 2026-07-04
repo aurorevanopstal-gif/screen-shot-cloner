@@ -14,7 +14,6 @@ import {
   Instagram,
   ChevronLeft,
   ChevronRight,
-  ChevronDown,
   Calendar,
   Heart,
   Sparkles,
