@@ -14,6 +14,7 @@ import {
   Instagram,
   ChevronLeft,
   ChevronRight,
+  ChevronDown,
   Calendar,
   Heart,
 } from "lucide-react";
