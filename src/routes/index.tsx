@@ -56,11 +56,8 @@ const nav = [
   { href: "#prochainement", label: "Prochainement" },
   { href: "#ecouter", label: "Écouter" },
   { href: "#repertoire", label: "Répertoire" },
-  {
-    href: "#programmer",
-    label: "Programmer",
-    children: [{ href: "#en-cours", label: "En cours" }],
-  },
+  { href: "#programmer", label: "Programmer" },
+  { href: "#en-cours", label: "En cours" },
   { href: "#contact", label: "Contact" },
 ];
 
