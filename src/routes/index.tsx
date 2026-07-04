@@ -266,6 +266,7 @@ function Index() {
               { id: "v-Hu-4BA5uo", caption: "Clip" },
               { id: "dyQOqYu1RIc", caption: "Live session" },
               { id: "KBNXy0NQttU", caption: "Jardin d'hiver — cover" },
+              { id: "2DNDzECt9vA", caption: "Feeling good" },
             ].map((v) => (
               <div key={v.id}>
                 <div className="aspect-video overflow-hidden rounded-xl border border-border bg-card shadow-xl">
