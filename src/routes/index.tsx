@@ -350,6 +350,17 @@ function Index() {
         </div>
       </section>
 
+      {/* EN COURS */}
+      <section id="en-cours" className="border-t border-border/40 py-20">
+        <div className="mx-auto max-w-3xl px-6 text-center">
+          <Sparkles className="mx-auto h-10 w-10 text-copper" strokeWidth={1.5} />
+          <h2 className="section-title mt-4">En cours</h2>
+          <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
+            Prochainement des compositions originales et bien d'autres surprises !
+          </p>
+        </div>
+      </section>
+
       {/* CONTACT */}
       <section id="contact" className="border-t border-border/40 py-20">
         <div className="mx-auto max-w-3xl px-6 text-center">
