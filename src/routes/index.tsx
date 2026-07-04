@@ -256,12 +256,12 @@ function Index() {
           <div className="mt-10 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
             {[
               { id: "yzYwXExQZgs", caption: "Soirée live" },
-              { id: "hzBz-2f3EIE", caption: "Nouveau extrait" },
               { id: "ul3BOQbkQ2M", caption: "À découvrir" },
               { id: "IMhNlQNqp0E", caption: "Session live" },
               { id: "9nwoRYQk6aE", caption: "En concert" },
               { id: "sZbTpoVHaAU", caption: "Acoustique" },
               { id: "c048ykEtcE0", caption: "Reprise" },
+              { id: "hzBz-2f3EIE", caption: "Nouveau extrait" },
               { id: "v-Hu-4BA5uo", caption: "Clip" },
               { id: "dyQOqYu1RIc", caption: "Live session" },
               { id: "KBNXy0NQttU", caption: "Jardin d'hiver — cover" },
