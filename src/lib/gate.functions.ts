@@ -5,7 +5,7 @@ import { createHash, timingSafeEqual } from "node:crypto";
 const sessionConfig = {
   password: process.env.SESSION_SECRET!,
   name: "site-gate",
-  maxAge: 60 * 60 * 24 * 30,
+  maxAge: 60 * 60 * 24 * 7,
   cookie: {
     httpOnly: true,
     secure: true,
