@@ -118,15 +118,40 @@ function Index() {
             <span className="font-script text-3xl leading-none text-foreground">Tandem</span>
           </a>
           <nav className="hidden items-center gap-8 md:flex">
-            {nav.map((n) => (
-              <a
-                key={n.href}
-                href={n.href}
-                className="text-sm tracking-wide text-muted-foreground transition-colors hover:text-copper"
-              >
-                {n.label}
-              </a>
-            ))}
+            {nav.map((n) =>
+              n.children ? (
+                <div key={n.href} className="group relative">
+                  <a
+                    href={n.href}
+                    className="flex items-center gap-1 text-sm tracking-wide text-muted-foreground transition-colors hover:text-copper"
+                  >
+                    {n.label}
+                    <ChevronDown className="h-4 w-4 transition-transform group-hover:rotate-180" />
+                  </a>
+                  <div className="absolute left-1/2 top-full hidden min-w-[10rem] -translate-x-1/2 pt-2 group-hover:block">
+                    <div className="rounded-xl border border-border/60 bg-background/95 p-2 shadow-lg backdrop-blur-md">
+                      {n.children.map((c) => (
+                        <a
+                          key={c.href}
+                          href={c.href}
+                          className="block rounded-lg px-4 py-2 text-sm text-muted-foreground transition-colors hover:bg-copper/10 hover:text-copper"
+                        >
+                          {c.label}
+                        </a>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              ) : (
+                <a
+                  key={n.href}
+                  href={n.href}
+                  className="text-sm tracking-wide text-muted-foreground transition-colors hover:text-copper"
+                >
+                  {n.label}
+                </a>
+              )
+            )}
           </nav>
         </div>
       </header>
