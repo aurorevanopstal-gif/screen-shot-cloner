@@ -17,6 +17,7 @@ import {
   ChevronDown,
   Calendar,
   Heart,
+  Sparkles,
 } from "lucide-react";
 import heroImg from "@/assets/tandem-duo-live.png.asset.json";
 import eventOhain from "@/assets/tandem-event-ohain.jpg";
