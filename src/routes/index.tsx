@@ -58,8 +58,8 @@ const nav = [
   { href: "#accueil", label: "Accueil" },
   { href: "#prochainement", label: "Prochainement" },
   { href: "#ecouter", label: "Écouter" },
-  { href: "#programmer", label: "Programmer" },
   { href: "#repertoire", label: "Répertoire" },
+  { href: "#programmer", label: "Programmer" },
   { href: "#contact", label: "Contact" },
 ];
 
