@@ -1,5 +1,4 @@
-import { createFileRoute, redirect } from "@tanstack/react-router";
-import { checkUnlocked } from "@/lib/gate.functions";
+import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import {
   Mic,
@@ -30,10 +29,6 @@ import {
 } from "@/components/ui/carousel";
 
 export const Route = createFileRoute("/")({
-  beforeLoad: async () => {
-    const { unlocked } = await checkUnlocked();
-    if (!unlocked) throw redirect({ to: "/unlock" });
-  },
   head: () => ({
     meta: [
       { title: "Tandem — Duo guitare et voix" },
