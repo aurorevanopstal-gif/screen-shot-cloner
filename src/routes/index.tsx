@@ -197,7 +197,7 @@ function Index() {
           <Carousel setApi={setApi} opts={{ align: "start", loop: false }} className="mt-10">
             <CarouselContent className="-ml-4">
               {upcomingEvents.map((e, i) => (
-                <CarouselItem key={i} className="basis-full pl-4 md:basis-1/2">
+                <CarouselItem key={i} className="basis-full pl-4 md:basis-1/2 lg:basis-1/3">
                   <article className="group overflow-hidden rounded-2xl border border-border bg-card transition-all hover:border-copper/60 hover:shadow-[0_10px_40px_-10px_var(--primary)]">
                     <div className="p-6">
                       <div className="flex items-center gap-2 text-copper">
