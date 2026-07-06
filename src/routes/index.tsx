@@ -232,11 +232,8 @@ function Index() {
               { id: "ul3BOQbkQ2M", caption: "À découvrir" },
               { id: "IMhNlQNqp0E", caption: "Session live" },
               { id: "9nwoRYQk6aE", caption: "En concert" },
-              { id: "c048ykEtcE0", caption: "Reprise" },
               { id: "hzBz-2f3EIE", caption: "Nouveau extrait" },
               { id: "v-Hu-4BA5uo", caption: "Clip" },
-              { id: "KBNXy0NQttU", caption: "Jardin d'hiver — cover" },
-              { id: "2DNDzECt9vA", caption: "Feeling good" },
               { id: "1xtE4LcOeDs", caption: "Live — Coup de cœur" },
             ].map((v) => (
               <div key={v.id}>
