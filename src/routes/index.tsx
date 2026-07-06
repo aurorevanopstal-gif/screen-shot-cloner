@@ -46,6 +46,7 @@ const nav = [
   { href: "#prochainement", label: "Prochainement" },
   { href: "#ecouter", label: "Écouter" },
   { href: "#repertoire", label: "Répertoire" },
+  { href: "#a-propos", label: "À propos" },
   { href: "#programmer", label: "Programmer" },
   { href: "#en-cours", label: "En cours" },
   { href: "#contact", label: "Contact" },
@@ -200,7 +201,7 @@ function Index() {
       </section>
 
       {/* À PROPOS */}
-      <section className="border-t border-border/40 py-20">
+      <section id="a-propos" className="border-t border-border/40 py-20">
         <div className="mx-auto grid max-w-7xl items-center gap-12 px-6 md:grid-cols-2">
           <img
             src={duoPortrait.url}
