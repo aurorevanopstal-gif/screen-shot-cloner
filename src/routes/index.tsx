@@ -63,6 +63,27 @@ const nav = [
 const events = [
   {
     img: eventOhain,
+    date: "Vendredi 17 juillet · 19h00",
+    dateValue: new Date("2026-07-17T19:00:00"),
+    place: "« La Bella Vita »",
+    note: "Rue de Heigne, 6141 Forchies-la-Marche",
+  },
+  {
+    img: eventOhain,
+    date: "Samedi 29 août · 19h00",
+    dateValue: new Date("2026-08-29T19:00:00"),
+    place: "« Fête de quartier d'Houdè »",
+    note: "Place du souvenir, Houdeng-Aimeries, 7110",
+  },
+  {
+    img: eventOhain,
+    date: "Jeudi 24 septembre · 20h00",
+    dateValue: new Date("2026-09-24T20:00:00"),
+    place: "The Voice Café",
+    note: "À confirmer",
+  },
+  {
+    img: eventOhain,
     date: "Vendredi 26 juin · 20h00",
     dateValue: new Date("2026-06-26T20:00:00"),
     place: "Les AfterWorks du Hututu, Ohain",
