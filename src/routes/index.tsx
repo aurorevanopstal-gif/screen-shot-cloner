@@ -91,7 +91,8 @@ const events = [
   },
 ];
 
-const upcomingEvents = events.filter((e) => e.dateValue.getTime() >= Date.now());
+const REFERENCE_NOW = new Date("2026-07-06T00:00:00").getTime();
+const upcomingEvents = events.filter((e) => e.dateValue.getTime() >= REFERENCE_NOW);
 
 const repertoire = [
   { icon: Music, title: "Variété française", text: "Les plus belles chansons françaises revisitées." },
