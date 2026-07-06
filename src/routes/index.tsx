@@ -1,5 +1,4 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useEffect, useState } from "react";
 import {
   Mic,
   Music,
@@ -12,8 +11,6 @@ import {
   Phone,
   Facebook,
   Instagram,
-  ChevronLeft,
-  ChevronRight,
   Calendar,
   Heart,
   Sparkles,
@@ -22,12 +19,6 @@ import heroImg from "@/assets/tandem-duo-live.png.asset.json";
 import eventOhain from "@/assets/tandem-event-ohain.jpg";
 import duoPortrait from "@/assets/tandem-duo-concert.jpg.asset.json";
 import guitareImg from "@/assets/tandem-guitare.jpg";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  type CarouselApi,
-} from "@/components/ui/carousel";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -109,24 +100,6 @@ const programmer = [
 ];
 
 function Index() {
-  const [api, setApi] = useState<CarouselApi>();
-  const [canScrollPrev, setCanScrollPrev] = useState(false);
-  const [canScrollNext, setCanScrollNext] = useState(false);
-
-  useEffect(() => {
-    if (!api) return;
-    setCanScrollPrev(api.canScrollPrev());
-    setCanScrollNext(api.canScrollNext());
-    const onSelect = () => {
-      setCanScrollPrev(api.canScrollPrev());
-      setCanScrollNext(api.canScrollNext());
-    };
-    api.on("select", onSelect);
-    return () => {
-      api.off("select", onSelect);
-    };
-  }, [api]);
-
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* NAV */}
@@ -195,45 +168,23 @@ function Index() {
           <h2 className="section-title">Prochainement</h2>
           <p className="mt-2 text-muted-foreground">Nos prochaines dates</p>
 
-          <Carousel setApi={setApi} opts={{ align: "start", loop: false }} className="mt-10">
-            <CarouselContent className="-ml-4">
-              {upcomingEvents.map((e, i) => (
-                <CarouselItem key={i} className="basis-full pl-4 md:basis-1/2 lg:basis-1/3">
-                  <article className="group overflow-hidden rounded-2xl border border-border bg-card transition-all hover:border-copper/60 hover:shadow-[0_10px_40px_-10px_var(--primary)]">
-                    <div className="p-6">
-                      <div className="flex items-center gap-2 text-copper">
-                        <Calendar className="h-4 w-4" />
-                        <span className="text-sm font-medium">{e.date}</span>
-                      </div>
-                      <h3 className="mt-2 font-serif text-xl text-foreground">{e.place}</h3>
-                      <p className="mt-1 text-sm text-muted-foreground">{e.note}</p>
-                    </div>
-                  </article>
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-
-            <div className="mt-6 flex items-center justify-end">
-              <div className="flex gap-2">
-                <button
-                  onClick={() => api?.scrollPrev()}
-                  disabled={!canScrollPrev}
-                  aria-label="Précédent"
-                  className="rounded-full border border-border p-2 text-muted-foreground transition-colors hover:border-copper hover:text-copper disabled:opacity-40"
-                >
-                  <ChevronLeft className="h-5 w-5" />
-                </button>
-                <button
-                  onClick={() => api?.scrollNext()}
-                  disabled={!canScrollNext}
-                  aria-label="Suivant"
-                  className="rounded-full border border-border p-2 text-muted-foreground transition-colors hover:border-copper hover:text-copper disabled:opacity-40"
-                >
-                  <ChevronRight className="h-5 w-5" />
-                </button>
-              </div>
-            </div>
-          </Carousel>
+          <div className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+            {upcomingEvents.map((e) => (
+              <article
+                key={`${e.date}-${e.place}`}
+                className="group min-h-40 overflow-hidden rounded-2xl border border-border bg-card transition-all hover:border-copper/60 hover:shadow-[0_10px_40px_-10px_var(--primary)]"
+              >
+                <div className="p-6">
+                  <div className="flex items-center gap-2 text-copper">
+                    <Calendar className="h-4 w-4 shrink-0" />
+                    <span className="text-sm font-medium">{e.date}</span>
+                  </div>
+                  <h3 className="mt-2 font-serif text-xl text-foreground">{e.place}</h3>
+                  <p className="mt-1 text-sm text-muted-foreground">{e.note}</p>
+                </div>
+              </article>
+            ))}
+          </div>
 
           <div className="mt-10 text-center">
             <a
