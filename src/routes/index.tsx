@@ -231,7 +231,7 @@ function Index() {
             {[
               { id: "yzYwXExQZgs", caption: "Soirée live" },
               { id: "ul3BOQbkQ2M", caption: "À découvrir" },
-              { id: "IMhNlQNqp0E", caption: "Session live" },
+              
               { id: "9nwoRYQk6aE", caption: "En concert" },
               { id: "lVQp9gAgEqQ", caption: "Vie d'artiste — cover" },
               { id: "v-Hu-4BA5uo", caption: "Clip" },
