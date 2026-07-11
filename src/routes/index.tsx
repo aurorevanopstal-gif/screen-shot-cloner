@@ -19,6 +19,16 @@ import {
   X,
 } from "lucide-react";
 import heroImg from "@/assets/tandem-duo-live.png.asset.json";
+
+function toBelgianIsoString(date: Date) {
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, "0");
+  const day = String(date.getDate()).padStart(2, "0");
+  const hour = String(date.getHours()).padStart(2, "0");
+  const minute = String(date.getMinutes()).padStart(2, "0");
+  const second = String(date.getSeconds()).padStart(2, "0");
+  return `${year}-${month}-${day}T${hour}:${minute}:${second}+02:00`;
+}
 import eventOhain from "@/assets/tandem-event-ohain.jpg";
 import duoPortrait from "@/assets/tandem-duo-concert.jpg.asset.json";
 import guitareImg from "@/assets/tandem-guitare.jpg";
