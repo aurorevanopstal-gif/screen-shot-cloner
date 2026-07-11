@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import {
   Mic,
@@ -14,6 +15,8 @@ import {
   Calendar,
   Heart,
   Sparkles,
+  Menu,
+  X,
 } from "lucide-react";
 import heroImg from "@/assets/tandem-duo-live.png.asset.json";
 import eventOhain from "@/assets/tandem-event-ohain.jpg";
