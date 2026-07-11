@@ -24,23 +24,64 @@ import duoPortrait from "@/assets/tandem-duo-concert.jpg.asset.json";
 import guitareImg from "@/assets/tandem-guitare.jpg";
 
 export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: "Tandem — Duo guitare et voix" },
-      {
-        name: "description",
-        content:
-          "Tandem, duo acoustique voix et guitare. Covers françaises, anglaises et italiennes, revisitées en version intimiste.",
-      },
-      { property: "og:title", content: "Tandem — Duo guitare et voix" },
-      {
-        property: "og:description",
-        content:
-          "Duo acoustique intimiste. Covers françaises, anglaises et italiennes.",
-      },
-      { property: "og:type", content: "website" },
-    ],
-  }),
+  head: () => {
+    const description =
+      "Duo guitare et voix. Covers françaises, anglaises et italiennes en version intimiste. Concerts, soirées privées et événements en Hainaut et en Belgique.";
+    const title = "Tandem, duo acoustique guitare et voix | Charleroi, Belgique";
+    const url = "https://musiquetandem.eu";
+    const image = `${url}${heroImg.url}`;
+
+    const musicGroupLd = {
+      "@context": "https://schema.org",
+      "@type": "MusicGroup",
+      name: "Tandem",
+      genre: "Acoustic covers",
+      description,
+      url,
+      image,
+      member: [
+        { "@type": "Person", name: "Cindy Detré", roleName: "chant" },
+        { "@type": "Person", name: "Hadrien", roleName: "guitare" },
+      ],
+    };
+
+    const eventLd = upcomingEvents.map((e) => ({
+      "@context": "https://schema.org",
+      "@type": "Event",
+      name: `Tandem — ${e.place}`,
+      startDate: e.dateValue.toISOString(),
+      eventStatus: "https://schema.org/EventScheduled",
+      eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
+      location: { "@type": "Place", name: e.place, address: e.note },
+      performer: { "@type": "MusicGroup", name: "Tandem" },
+      image,
+      url,
+    }));
+
+    return {
+      meta: [
+        { title },
+        { name: "description", content: description },
+        { property: "og:title", content: title },
+        { property: "og:description", content: description },
+        { property: "og:type", content: "website" },
+        { property: "og:url", content: url },
+        { property: "og:image", content: image },
+        { name: "twitter:card", content: "summary_large_image" },
+        { name: "twitter:title", content: title },
+        { name: "twitter:description", content: description },
+        { name: "twitter:image", content: image },
+      ],
+      links: [{ rel: "canonical", href: url }],
+      scripts: [
+        { type: "application/ld+json", children: JSON.stringify(musicGroupLd) },
+        ...eventLd.map((ld) => ({
+          type: "application/ld+json",
+          children: JSON.stringify(ld),
+        })),
+      ],
+    };
+  },
   component: Index,
 });
 
@@ -246,6 +287,9 @@ function Index() {
             <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
               Un duo intimiste qui revisite avec élégance des chansons d'hier et d'aujourd'hui,
               pour des moments vrais, proches du public.
+            </p>
+            <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
+              Basé dans la région de Charleroi, Tandem se produit dans tout le Hainaut et en Belgique francophone.
             </p>
           </div>
         </div>
