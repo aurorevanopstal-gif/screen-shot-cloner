@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import {
   Mic,
@@ -14,6 +15,8 @@ import {
   Calendar,
   Heart,
   Sparkles,
+  Menu,
+  X,
 } from "lucide-react";
 import heroImg from "@/assets/tandem-duo-live.png.asset.json";
 import eventOhain from "@/assets/tandem-event-ohain.jpg";
@@ -101,6 +104,8 @@ const programmer = [
 ];
 
 function Index() {
+  const [mobileOpen, setMobileOpen] = useState(false);
+
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* NAV */}
@@ -121,7 +126,31 @@ function Index() {
               </a>
             ))}
           </nav>
+          <button
+            aria-label="Menu"
+            aria-expanded={mobileOpen}
+            onClick={() => setMobileOpen((o) => !o)}
+            className="rounded-md p-2 text-muted-foreground transition-colors hover:text-copper md:hidden"
+          >
+            {mobileOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          </button>
         </div>
+        {mobileOpen && (
+          <nav className="border-t border-border/40 bg-background px-6 py-4 md:hidden">
+            <div className="flex flex-col gap-4">
+              {nav.map((n) => (
+                <a
+                  key={n.href}
+                  href={n.href}
+                  onClick={() => setMobileOpen(false)}
+                  className="text-sm tracking-wide text-muted-foreground transition-colors hover:text-copper"
+                >
+                  {n.label}
+                </a>
+              ))}
+            </div>
+          </nav>
+        )}
       </header>
 
       {/* HERO */}
