@@ -59,7 +59,7 @@ export const Route = createFileRoute("/")({
       "@context": "https://schema.org",
       "@type": "Event",
       name: `Tandem — ${e.place}`,
-      startDate: e.dateValue.toISOString(),
+      startDate: toBelgianIsoString(e.dateValue),
       eventStatus: "https://schema.org/EventScheduled",
       eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
       location: { "@type": "Place", name: e.place, address: e.note },
