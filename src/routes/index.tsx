@@ -40,7 +40,7 @@ export const Route = createFileRoute("/")({
       url,
       image,
       member: [
-        { "@type": "Person", name: "Cindy Detré", roleName: "chant" },
+        { "@type": "Person", name: "Cindy Dsyness", roleName: "chant" },
         { "@type": "Person", name: "Hadrien", roleName: "guitare" },
       ],
     };
@@ -289,7 +289,7 @@ function Index() {
               pour des moments vrais, proches du public.
             </p>
             <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
-              Basé dans la région de Charleroi, Tandem se produit en Belgique francophone et en France.
+              Basé dans la région de La Louvière, Tandem se produit en Belgique francophone et en France.
             </p>
           </div>
         </div>
