@@ -288,6 +288,9 @@ function Index() {
               Un duo intimiste qui revisite avec élégance des chansons d'hier et d'aujourd'hui,
               pour des moments vrais, proches du public.
             </p>
+            <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
+              Basé dans la région de Charleroi, Tandem se produit dans tout le Hainaut et en Belgique francophone.
+            </p>
           </div>
         </div>
       </section>
