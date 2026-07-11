@@ -26,10 +26,10 @@ import guitareImg from "@/assets/tandem-guitare.jpg";
 export const Route = createFileRoute("/")({
   head: () => {
     const description =
-      "Duo guitare et voix. Covers françaises, anglaises et italiennes en version intimiste. Concerts, soirées privées et événements en Hainaut et en Belgique.";
-    const title = "Tandem, duo acoustique guitare et voix | Charleroi, Belgique";
+      "Duo guitare et voix. Covers françaises, anglaises et italiennes en version intimiste. Concerts et événements en Belgique et en France.";
+    const title = "Tandem, duo acoustique guitare et voix | Belgique, France";
     const url = "https://musiquetandem.eu";
-    const image = `${url}${heroImg.url}`;
+    const image = `${url}${duoPortrait.url}`;
 
     const musicGroupLd = {
       "@context": "https://schema.org",
@@ -289,7 +289,7 @@ function Index() {
               pour des moments vrais, proches du public.
             </p>
             <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
-              Basé dans la région de Charleroi, Tandem se produit dans tout le Hainaut et en Belgique francophone.
+              Basé dans la région de Charleroi, Tandem se produit en Belgique francophone et en France.
             </p>
           </div>
         </div>
