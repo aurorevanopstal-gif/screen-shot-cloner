@@ -31,6 +31,8 @@ function toBelgianIsoString(date: Date) {
 }
 import eventOhain from "@/assets/tandem-event-ohain.jpg";
 import duoPortrait from "@/assets/tandem-duo-concert.jpg.asset.json";
+import hadrienPortrait from "@/assets/hadrien-portrait.jpg.asset.json";
+import cindyPortrait from "@/assets/cindy-portrait.jpg.asset.json";
 import guitareImg from "@/assets/tandem-guitare.jpg";
 
 export const Route = createFileRoute("/")({
