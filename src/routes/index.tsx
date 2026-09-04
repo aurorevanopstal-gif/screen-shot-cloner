@@ -19,6 +19,8 @@ import {
   X,
 } from "lucide-react";
 import heroImg from "@/assets/tandem-duo-live.png.asset.json";
+import { ConcertSubscribeDialog } from "@/components/ConcertSubscribeDialog";
+
 
 function toBelgianIsoString(date: Date) {
   const year = date.getFullYear();
