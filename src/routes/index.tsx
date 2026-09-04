@@ -284,25 +284,70 @@ function Index() {
 
       {/* À PROPOS */}
       <section id="a-propos" className="border-t border-border/40 py-20">
-        <div className="mx-auto grid max-w-7xl items-center gap-12 px-6 md:grid-cols-2">
-          <img
-            src={duoPortrait.url}
-            alt="Portrait du duo Tandem"
-            className="mx-auto h-auto w-full max-w-xl rounded-2xl object-contain shadow-2xl"
-          />
-          <div>
-            <Mic className="h-10 w-10 text-copper" strokeWidth={1.5} />
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="text-center">
+            <Mic className="mx-auto h-10 w-10 text-copper" strokeWidth={1.5} />
             <h2 className="section-title mt-4">À propos</h2>
-            <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
+            <p className="mx-auto mt-6 max-w-3xl text-lg leading-relaxed text-muted-foreground">
               Tandem, c'est la complicité d'une voix chaleureuse et d'une guitare sensible.
             </p>
-            <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
+            <p className="mx-auto mt-4 max-w-3xl text-lg leading-relaxed text-muted-foreground">
               Un duo intimiste qui revisite avec élégance des chansons d'hier et d'aujourd'hui,
               pour des moments vrais, proches du public.
             </p>
-            <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
+            <p className="mx-auto mt-4 max-w-3xl text-lg leading-relaxed text-muted-foreground">
               Basé dans la région de La Louvière, Tandem se produit en Belgique francophone et en France.
             </p>
+          </div>
+
+          <div className="mt-16 grid gap-12 md:grid-cols-2">
+            {/* Hadrien */}
+            <div className="flex flex-col items-center">
+              <img
+                src={hadrienPortrait.url}
+                alt="Hadrien, guitariste de Tandem"
+                className="h-auto w-full max-w-sm rounded-2xl object-contain shadow-2xl"
+              />
+              <div className="mt-6 max-w-lg">
+                <h3 className="font-serif text-2xl text-foreground">Hadrien</h3>
+                <p className="mt-4 text-base leading-relaxed text-muted-foreground">
+                  Guitariste et musicien passionné, Hadrien accompagne TANDEM avec une approche musicale à la fois sensible, instinctive et attentive au service de la chanson.
+                </p>
+                <p className="mt-4 text-base leading-relaxed text-muted-foreground">
+                  Sa guitare ne se contente pas d'accompagner la voix : elle participe pleinement à l'interprétation, en créant les atmosphères, les respirations et les nuances qui donnent aux chansons leur couleur.
+                </p>
+                <p className="mt-4 text-base leading-relaxed text-muted-foreground">
+                  Dans TANDEM, il partage avec Cindy une même envie : réinterpréter les chansons avec sincérité et créer un véritable échange avec le public, tout en développant progressivement leur propre univers musical à travers leurs compositions originales.
+                </p>
+                <p className="mt-4 text-base leading-relaxed text-muted-foreground">
+                  Hadrien est également un saxophoniste polyvalent (soprano, alto, ténor, baryton), et clarinettiste. Formé au Jazzstudio d'Anvers et diplômé de JazzBXL (classe de Stéphane Mercier), il évolue depuis 2010 dans l'univers du jazz, de la soul et des musiques actuelles.
+                </p>
+              </div>
+            </div>
+
+            {/* Cindy */}
+            <div className="flex flex-col items-center">
+              <img
+                src={cindyPortrait.url}
+                alt="Cindy Dsyness, chanteuse de Tandem"
+                className="h-auto w-full max-w-sm rounded-2xl object-contain shadow-2xl"
+              />
+              <div className="mt-6 max-w-lg">
+                <h3 className="font-serif text-2xl text-foreground">Cindy Dsyness</h3>
+                <p className="mt-4 text-base leading-relaxed text-muted-foreground">
+                  Cindy Dsyness au chant : une voix lumineuse et pleine d'émotion qui incarne toute l'âme de Tandem. Elle débute son parcours artistique dès l'enfance avec le solfège et le saxophone, avant de découvrir la musique collective au sein de fanfares et de marches folkloriques.
+                </p>
+                <p className="mt-4 text-base leading-relaxed text-muted-foreground">
+                  Plus tard, le chant s'impose naturellement comme son principal moyen d'expression. Après plusieurs concours et près de dix ans de formation vocale, elle développe une identité artistique marquée par la sincérité et l'émotion.
+                </p>
+                <p className="mt-4 text-base leading-relaxed text-muted-foreground">
+                  Elle participe à des projets variés : chant polyphonique, albums collectifs, album personnel aux influences jazz et burlesques, ainsi que différentes formations allant de la soul et du blues au pop-rock et au jazz en big band.
+                </p>
+                <p className="mt-4 text-base leading-relaxed text-muted-foreground">
+                  Lumineuse, puissante et chaleureuse, sa voix privilégie le lien et le partage avant tout.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
