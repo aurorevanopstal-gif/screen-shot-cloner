@@ -300,6 +300,12 @@ function Index() {
             </p>
           </div>
 
+          <img
+            src={duoPortrait.url}
+            alt="Portrait du duo Tandem"
+            className="mx-auto mt-12 h-auto w-full max-w-2xl rounded-2xl object-contain shadow-2xl"
+          />
+
           <div className="mt-16 grid gap-12 md:grid-cols-2">
             {/* Hadrien */}
             <div className="flex flex-col items-center">
