@@ -270,7 +270,7 @@ function Index() {
             ))}
           </div>
 
-          <div className="mt-10 text-center">
+          <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
             <a
               href="https://facebook.com/Tandemgvx"
               target="_blank"
@@ -279,7 +279,9 @@ function Index() {
             >
               Toutes nos dates
             </a>
+            <ConcertSubscribeDialog />
           </div>
+
         </div>
       </section>
 
