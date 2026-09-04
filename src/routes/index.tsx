@@ -359,6 +359,51 @@ function Index() {
         </div>
       </section>
 
+      {/* HISTORIQUE */}
+      <section id="historique" className="border-t border-border/40 py-20">
+        <div className="mx-auto max-w-3xl px-6">
+          <h2 className="section-title text-center">Historique de TANDEM</h2>
+
+          <h3 className="mt-10 font-serif text-2xl text-foreground">Comment est né TANDEM ?</h3>
+          <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
+            TANDEM est né d'une rencontre… et d'un petit défi lancé presque par hasard.
+          </p>
+          <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
+            Cindy et Hadrien se sont rencontrés au sein d'un groupe de musique Soul dans lequel Hadrien jouait du saxophone. Le groupe cherchait alors une chanteuse et Cindy les a rejoints, partageant avec eux plusieurs années de musique et de concerts.
+          </p>
+          <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
+            Parallèlement, Cindy avait commencé à chanter en duo avec le guitariste du groupe. Hadrien, qui prenait des cours de guitare depuis quelques années, s'est naturellement retrouvé à jouer avec elle.
+          </p>
+          <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
+            Un jour, alors qu'un concert en duo était prévu le mois suivant, le guitariste du groupe leur lance simplement :
+          </p>
+          <p className="mt-4 text-center text-xl font-medium italic leading-relaxed text-copper">
+            « Ben… allez-y tous les deux ! »
+          </p>
+          <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
+            Il n'en fallait pas davantage. En un mois, Cindy et Hadrien constituent leur premier répertoire et montent sur scène pour leur tout premier concert ensemble.
+          </p>
+          <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
+            Restait à trouver un nom à ce nouveau duo. Après quelques échanges avec leurs amis, un nom s'impose comme une évidence : TANDEM.
+          </p>
+          <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
+            Au fil des concerts, le répertoire s'est construit autour de chansons choisies avant tout pour leurs textes, leurs émotions et les histoires qu'elles racontent. Cindy choisit les chansons qui lui parlent et qu'elle a envie de porter avec sa voix ; Hadrien y apporte son univers musical et sa sensibilité de guitariste. Ensemble, ils les réinterprètent à leur manière.
+          </p>
+          <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
+            Mais, au fil du temps, une envie s'est faite de plus en plus présente : ne plus seulement raconter les mots des autres.
+          </p>
+          <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
+            TANDEM s'est progressivement senti à l'étroit dans un répertoire composé uniquement de chansons existantes. L'envie est née d'aller plus loin, de sortir du cadre, d'écrire leurs propres histoires et de créer une musique qui leur ressemble véritablement.
+          </p>
+          <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
+            Aujourd'hui, TANDEM continue bien sûr à faire vivre les chansons qui les touchent en les réinterprétant avec leur propre sensibilité. Mais une nouvelle étape s'ouvre : Cindy écrit ses textes, Hadrien compose la musique, et TANDEM construit peu à peu son propre univers.
+          </p>
+          <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
+            Après avoir longtemps chanté les mots des autres, TANDEM a aujourd'hui envie de prendre la parole avec ses propres mots et sa propre musique, et de les partager avec le public.
+          </p>
+        </div>
+      </section>
+
       {/* ÉCOUTER */}
       <section id="ecouter" className="border-t border-border/40 py-20">
         <div className="mx-auto max-w-7xl px-6">
