@@ -19,6 +19,8 @@ import {
   X,
 } from "lucide-react";
 import heroImg from "@/assets/tandem-duo-live.png.asset.json";
+import { ConcertSubscribeDialog } from "@/components/ConcertSubscribeDialog";
+
 
 function toBelgianIsoString(date: Date) {
   const year = date.getFullYear();
@@ -270,7 +272,7 @@ function Index() {
             ))}
           </div>
 
-          <div className="mt-10 text-center">
+          <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
             <a
               href="https://facebook.com/Tandemgvx"
               target="_blank"
@@ -279,7 +281,9 @@ function Index() {
             >
               Toutes nos dates
             </a>
+            <ConcertSubscribeDialog />
           </div>
+
         </div>
       </section>
 
