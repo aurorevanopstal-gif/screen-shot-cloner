@@ -126,7 +126,7 @@ const events = [
     date: "Jeudi 24 septembre · 20h00",
     dateValue: new Date("2026-09-24T20:00:00"),
     place: "The Voice Café",
-    note: "À confirmer",
+    note: "",
   },
   {
     img: eventOhain,
