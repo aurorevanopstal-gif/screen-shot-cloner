@@ -101,6 +101,7 @@ const nav = [
   { href: "#accueil", label: "Accueil" },
   { href: "#prochainement", label: "Prochainement" },
   { href: "#a-propos", label: "À propos" },
+  { href: "#historique", label: "Historique" },
   { href: "#ecouter", label: "Écouter" },
   { href: "#repertoire", label: "Répertoire" },
   { href: "#programmer", label: "Programmer" },
